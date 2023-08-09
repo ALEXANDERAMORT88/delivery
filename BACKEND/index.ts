@@ -7,7 +7,7 @@ import { routerApi } from './src/controllers/routes';
 
 dotenv.config();
 const app = express();
-const PORT = 3800;
+const PORT: number = 2500;
 
 app.use(cors());
 app.use(express.json());
@@ -18,10 +18,11 @@ mongoose.connect(process.env.MONGO_URL as string)
 })
 .catch(() => {
     console.log("Error de conexión con Mongo");
+    // console.error("Error de conexión con Mongo", error);
 });
 
 routerApi(app);
 
 app.listen( PORT, function () {
-    console.log("La aplicación está Ejecutandose en http://localhots" + PORT);
+    console.log("La aplicación está Ejecutandose en http://localhots " + PORT);
 });
