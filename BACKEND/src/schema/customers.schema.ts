@@ -7,7 +7,7 @@ const customerSchema = new mongoose.Schema<Customer> ({
     email: { type: String, require: true },
     birthDate: { type: String, require: true },
     cel: { type: String, require: true },
-    addres: { type: String, require: true }
+    address: { type: String, require: true }
 });
 
 const CustomerSchema = mongoose.model("Customers", customerSchema);
