@@ -1,9 +1,9 @@
 interface Collaborator {
     id:string;
-    ein: string;
+    businessId: string;
     collaboratorName: string;
     email: string;
-    address: string;
+    location: string;
 
 }
 
