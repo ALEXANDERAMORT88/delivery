@@ -12,7 +12,7 @@ import { CustomErrorFormat } from '../types/api.types';
 
 const router = express.Router();
 
-router.get('', authenticateToken, async ( req, res ) => {
+router.get('',  async ( req, res ) => {
     try {
         const ServiceLayerResponse = await getCustomers();
 
@@ -37,7 +37,7 @@ router.get('/id/:id', authenticateToken, async (req, res) => {
     }
 });
 
-router.get('/name/:name', authenticateToken,async (req, res) => {
+router.get('/name/:name', authenticateToken ,async (req, res) => {
     try {
         const name = req.params.name;
         const serviceLayerResponse = await getCustomersByName(name);
@@ -49,7 +49,7 @@ router.get('/name/:name', authenticateToken,async (req, res) => {
     }
 });
 
-router.post('',authenticateToken,async (req, res) => {
+router.post('', async (req, res) => {
     try {
         const body = req.body;
         const serviceLayerResponse = await postCustomer(body);
