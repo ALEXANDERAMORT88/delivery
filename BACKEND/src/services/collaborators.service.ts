@@ -18,7 +18,12 @@ res({ code: 200, result: localCollaboratorDB});
   });
 };
 
+const getCollaboratorsByLocation = (): Promise<ServiceLayerResponse<Collaborator>> => { return new Promise((res, rej) =>{
+
+})
+}
+
 
 export {
-    getCollaborators,
-}
+    getCollaborators, getCollaboratorsByLocation,
+};

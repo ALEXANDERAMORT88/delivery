@@ -24,5 +24,5 @@ mongoose.connect(process.env.MONGO_URL as string)
 routerApi(app);
 
 app.listen( PORT, function () {
-    console.log("La aplicación está Ejecutandose en http://localhots " + PORT);
+    console.log("La aplicación está Ejecutandose en http://localhost " + PORT);
 });
