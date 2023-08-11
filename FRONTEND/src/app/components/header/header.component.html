@@ -1,39 +1,81 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">LOGO HOME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rastrear</a>
+
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Rastrear
+            </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Rastrear y consultar</a></li>
-              <li><a class="dropdown-item" href="#">Rastrear Factura Electrónica</a></li>
-              <li><a class="dropdown-item" href="#">Rastrear múltiples guías</a></li>
-              <li><a class="dropdown-item" href="#">Rastrear por referencia</a></li>
-              <li><a class="dropdown-item" href="#">Rastrear por destinatario</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Destinos y trayectos</a></li>
+                <li><a class="dropdown-item" href="#">Rastrear Factura Electrónica</a></li>
+                <li><a class="dropdown-item" href="#">Rastrear múltiples guías</a></li>
+                <li><a class="dropdown-item" href="#">Rastrear por referencia</a></li>
+                <li><a class="dropdown-item" href="#">Rastrear por destinatario</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Destinos y trayectos</a></li>
             </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cotizar</a>
+          </div>
+
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Cotizar
+            </button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Cotizar mis envios</a></li>
               <li><a class="dropdown-item" href="#">Ver tarifas y precios</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recoger</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
+          </div>
+
+          <button type="button" class="btn btn-primary">Primary</button>
+
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Soluciones
+            </button>
+            <div class="dropdown-menu">
+              <div class="container-solutions d-flex">
+                <div class="sub-menu-solution">
+                  <div class="row">
+                    <div class="col-12 col-md-4">
+                      <div class="my-3">
+                        <img class="img-shipment-envio" src="../../../assets/imgNavbar/enviado.png" alt="envios-transporte">
+                        <a class="dropdown-item" href="#">Transporte y entrega</a>
+                      </div>
+                      <div class="  col-12 col-md-4">
+                        <ul class="list-group mx-2">
+                          <li class="list-group sub"><a href="#" class="list-group-item list-group-item-action">Documentos</a></li>
+                          <li class="list-group"><a href="#" class="list-group-item list-group-item-action">Mercancias</a></li>
+                          <li class="list-group"><a href="#" class="list-group-item list-group-item-action">Confidencialidad y valores</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class="sub-menu-solution">
+                  <div>
+                    <img class="img-shipment-envio" src="../../../assets/imgNavbar/logistica.png" alt="soluciones-logistica">
+                    <a class="dropdown-item" href="#">Soluciones de logística</a>
+                  </div>
+                </div>
+                <li><a class="dropdown-item" href="#">Ver tarifas y precios</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </div>
+            </div>
+          </div>
+
         </ul>
+
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
