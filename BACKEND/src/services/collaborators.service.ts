@@ -2,7 +2,8 @@ import { Collaborator } from "../types/collaborators.types";
 
 import { ServiceLayerResponse } from "../types/api.types";
 
-import { readCollaborators } from "../data/collaborators.data";
+import { readCollaborators,
+readCollaboratorsByName, addCollaborator, editCollaborator, removeCollaborator } from "../data/collaborators.data";
 
 
 const getCollaborators = (): Promise<ServiceLayerResponse<Collaborator>> =>  {
@@ -18,12 +19,60 @@ res({ code: 200, result: localCollaboratorDB});
   });
 };
 
-const getCollaboratorsByLocation = (): Promise<ServiceLayerResponse<Collaborator>> => { return new Promise((res, rej) =>{
+const getCollaboratorsByName =(collaboratorName: string): Promise<ServiceLayerResponse<Collaborator>> => {
+return new Promise((res, rej)=> { readCollaboratorsByName(collaboratorName).then((dataLayerResponse)=> {
+   if ((dataLayerResponse as Collaborator[]).length === 0) {
+    res({code: 404, message: 'Collaborator does not exist'})
+   } else {
+    res({code: 200, result: dataLayerResponse as Collaborator })
+   }
+}) .catch(error=>{
+    rej({code: 500, message:'Unexpected error', erroMessage: error});
+     });
+   });
+};
 
-})
-}
 
+const postCollaborator = (body: Collaborator): Promise<ServiceLayerResponse<Collaborator>> => { return new Promise((res, rej) => {
+    addCollaborator(body).then((dataLayerResponse)=>{
+        res({code: 201, message: dataLayerResponse as string});
+    }) .catch(error => {
+        rej({code: 500, message: 'Unexpected error', errorMessage: error});
+    })
+});
+};
+
+const putCollaborator = (employeeId: string, body: Collaborator): Promise<ServiceLayerResponse<Collaborator>> => {
+    return new Promise((res,  rej)=> {
+    editCollaborator(employeeId, body).then((dataLayerResponse) => {
+        if (dataLayerResponse === 200) {
+            res({code: 200, message: 'Collaborator updated successfully' as string})
+        };
+    }) .catch(error => {
+        if (error === 404) {
+           rej({code: 404, message:'Collaborator not found'})
+        } else {
+            rej({code: 500, message: 'Unexpected error', errorMessage: error});
+        }
+    });
+});
+};
+
+const deleteCollaborator = (employeeId: string): Promise<ServiceLayerResponse<Collaborator>> => { return new Promise((res, rej) => {
+    removeCollaborator(employeeId).then((dataLayerResponse)=> {
+        if (dataLayerResponse=== 200) {
+            res({code: 200, message: 'Collaborator removed successfully'})
+        }
+    }).catch((error)=> {
+        if (error === 404) {
+            rej({code: 404, message: 'Collaborator not found'});
+        } else {
+            rej({code: 500, message: 'Unexpected error', errorMessage: error})
+        }
+    });
+ });
+};
 
 export {
-    getCollaborators, getCollaboratorsByLocation,
+    getCollaborators, putCollaborator,getCollaboratorsByName, postCollaborator, deleteCollaborator
 };

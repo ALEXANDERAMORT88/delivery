@@ -1,6 +1,6 @@
 interface Collaborator {
     id:string;
-    businessId: string;
+    employeeId: string;
     collaboratorName: string;
     email: string;
     location: string;

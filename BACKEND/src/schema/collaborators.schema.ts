@@ -3,7 +3,7 @@ import { Collaborator } from "../types/collaborators.types";
 
 const collaboratorSchema = new mongoose.Schema <Collaborator> ({
 
-    businessId: { type:String, require: true},
+    employeeId: { type:String, require: true},
     collaboratorName: {type: String, require: true},
     email: {type: String, require: true},
     location: {type: String, require: true},

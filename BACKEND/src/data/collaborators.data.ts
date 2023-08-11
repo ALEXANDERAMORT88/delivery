@@ -12,8 +12,65 @@ rej(error);
 }})
 
 
+};
+
+const readCollaboratorsByName = (collaboratorName: string) => {
+return new Promise(async(res, rej) => { try {  const mongoResult = await CollaboratorSchema.findOne({ name: collaboratorName}); if (mongoResult === null) { rej(404)
+} else {
+ res(mongoResult);
 }
+} catch (error) {
+    rej(error)
+    console.log("Unexpected Error")
+}
+});
+};
+
+const addCollaborator = (body: Collaborator) =>{
+    return new Promise(async(res, rej) => {
+        try { const collaborator = new CollaboratorSchema(body);
+            await collaborator.save();
+            res("Partner added successfully");
+        } catch (error) {
+            rej(error)
+            console.error("unexpected error");
+        }
+    });
+};
+
+const editCollaborator = (employeeId: string, body: Collaborator) => {
+    return new Promise (async(res, rej)=> {
+        try {
+            const collaborator = await
+            CollaboratorSchema.findById(employeeId, body, {new: true});
+            if (collaborator === null) {
+                rej(404);
+            } else {
+                res(200);
+            }
+        } catch (error) {
+            rej(error);
+        }
+    });
+};
+
+const removeCollaborator = (employeeId: string) => {
+    return new Promise( async(res, rej)=> {
+        try {
+            const removePartner = await
+            CollaboratorSchema.findByIdAndRemove(employeeId);
+            if (removePartner === null) {
+                rej(404);
+            } else {
+                res(200);
+            }
+
+        } catch (error) {
+            rej(error);
+        }
+    });
+};
 
 export {
-    readCollaborators,
+    readCollaborators, readCollaboratorsByName, addCollaborator, removeCollaborator, editCollaborator
 };
