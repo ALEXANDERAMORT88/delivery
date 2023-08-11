@@ -2,10 +2,12 @@ import express from 'express';
 import { authenticateToken } from '../middlewares/jwt-validation';
 
 import {
+    deleteCustomer,
     getCustomers,
     getCustomersById,
     getCustomersByName,
-    postCustomer
+    postCustomer,
+    putCustomer
 } from '../services/customers.service';
 
 import { CustomErrorFormat } from '../types/api.types';
@@ -58,6 +60,33 @@ router.post('', async (req, res) => {
         const customError = error as CustomErrorFormat;
         console.log(customError.errorMessage);
         res.status(customError.code).json(customError.message);
+    }
+});
+
+router.put('/:id', async function (req, res) {
+    try {
+        const id = req.params.id;
+        const body = req.body;
+        const serviceLayerResponse = await putCustomer(id, body);
+
+        res.status(serviceLayerResponse.code).json(serviceLayerResponse.message);
+    } catch (error) {
+        const customError = error as CustomErrorFormat;
+        console.log(customError.errorMessage);
+        res.status(customError.code).json(customError.message);
+    }
+});
+
+router.delete('/:id', async function (req, res) {
+    try {
+        const id = req.params.id;
+        const serviceLayerResponse = await deleteCustomer(id);
+        res.status(serviceLayerResponse.code).json(serviceLayerResponse.message);
+    } catch (error) {
+        const customError = error as CustomErrorFormat;
+        console.log(customError.errorMessage);
+        res.status(customError.code).json(customError.message)
+        
     }
 })
 

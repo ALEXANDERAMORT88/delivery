@@ -5,7 +5,9 @@ import {
     createCustomer,
     readCustomers,
     readCustomersById,
-    readCustomersByName
+    readCustomersByName,
+    updateCustomer,
+    deleteCustomerById
 } from '../data/customers.data';
 
 
@@ -66,12 +68,47 @@ const postCustomer = (body: Customer): Promise<ServiceLayerResponse<Customer>> =
     });
 };
 
+const putCustomer = ( id: string, body: Customer): Promise<ServiceLayerResponse<Customer>> => {
+    return new Promise((res, rej) => {
+        updateCustomer(id, body)
+        .then((dataLayerResponse) => {
+            if (dataLayerResponse === 200) (
+                res({code: 200, message: 'El Cliente fue Actualizado exitosamente' as string})
+            );
+        })
+        .catch(error => {
+            if (error === 404) {
+                rej({ code: 404, message: 'El Cliente no fue encontrado'})
+            } else {
+                rej({ code: 500, message: 'Unexpected error', errorMessague: error});
+            }
+        });
+    });
+};
 
+const deleteCustomer = (id: string):Promise<ServiceLayerResponse<Customer>> => {
+    return new Promise((res, rej) => {
+        deleteCustomerById(id)
+        .then((dataLayerResponse) => {
+            if (dataLayerResponse === 200) {
+                res({ code: 200, message: 'El Cliente fue Eliminado'});
+            }
+        })
+        .catch( (error) => {
+            if (error === 404) {
+                rej({ code: 404, message: 'El Cliente no Existe'});
+            } else {
+                rej({code: 500, message: 'Error inesperado', errorMessage: error})
+            }
+        });
+    });
+};
 
 export {
     getCustomers,
     getCustomersById,
     getCustomersByName,
-    postCustomer
-
+    postCustomer,
+    putCustomer,
+    deleteCustomer
 };

@@ -58,9 +58,43 @@ const createCustomer = (body: Customer) => {
     });
 };
 
+const updateCustomer = (id: string, body: Customer) =>{
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise (async (res, rej)=> {
+        try {
+            const updateEntitu = await CustomerSchema.findByIdAndUpdate(id, body, {new:true});
+            if (updateEntitu === null) {
+                rej(404);
+            } else {
+                res(200);
+            }
+        } catch (error) {
+            rej(error);
+        }
+    });
+};
+
+const deleteCustomerById = (id: string) => {
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise(async (res, rej) => {
+        try {
+            const deleteEntity = await CustomerSchema.findByIdAndRemove(id);
+            if (deleteEntity === null) {
+                rej(404);
+            } else {
+                res(200);
+            }
+        } catch (error) {
+            rej(error);
+        }
+    });
+};
+
 export {
     readCustomers,
     readCustomersById,
     readCustomersByName,
     createCustomer,
+    updateCustomer,
+    deleteCustomerById
 };
