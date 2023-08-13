@@ -15,6 +15,7 @@ rej(error);
 };
 
 const readCollaboratorsByName = (collaboratorName: string) => {
+// eslint-disable-next-line no-async-promise-executor
 return new Promise(async(res, rej) => { try {  const mongoResult = await CollaboratorSchema.findOne({ name: collaboratorName}); if (mongoResult === null) { rej(404)
 } else {
  res(mongoResult);
@@ -27,6 +28,7 @@ return new Promise(async(res, rej) => { try {  const mongoResult = await Collabo
 };
 
 const addCollaborator = (body: Collaborator) =>{
+    // eslint-disable-next-line no-async-promise-executor
     return new Promise(async(res, rej) => {
         try { const collaborator = new CollaboratorSchema(body);
             await collaborator.save();
@@ -39,6 +41,7 @@ const addCollaborator = (body: Collaborator) =>{
 };
 
 const editCollaborator = (employeeId: string, body: Collaborator) => {
+    // eslint-disable-next-line no-async-promise-executor
     return new Promise (async(res, rej)=> {
         try {
             const collaborator = await
@@ -55,6 +58,7 @@ const editCollaborator = (employeeId: string, body: Collaborator) => {
 };
 
 const removeCollaborator = (employeeId: string) => {
+    // eslint-disable-next-line no-async-promise-executor
     return new Promise( async(res, rej)=> {
         try {
             const removePartner = await
