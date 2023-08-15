@@ -1,0 +1,45 @@
+
+.form-container{
+
+display: flex;
+margin: 50px auto;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+
+.card-body{
+    display: flex;
+    background-color: #92c1ad56;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.forgot-password{
+text-decoration: underline;
+font-size: 0.8rem;
+}
+
+.signup{
+    text-decoration: underline;
+    font-size: 0.8rem;
+}
+.recover-view{
+    display: flex;
+    margin: 0 auto;
+   flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-email{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-content: space-evenly;
+
+}

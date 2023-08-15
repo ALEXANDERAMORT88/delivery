@@ -5,7 +5,20 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+
+
 })
+
+
 export class LoginComponent {
 
+forgotPassword = false 
+
+
+ btnForgotPassword () {
+  this.forgotPassword = !this.forgotPassword
+ }
+
+
 }
+
