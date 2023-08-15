@@ -15,6 +15,7 @@ class VehicleController {
   }
 
   getAllVehicles = (req: Request, res: Response) => {
+    
     const vehicles = this.vehicleService.getAllVehicles();
     res.json(vehicles);
   }

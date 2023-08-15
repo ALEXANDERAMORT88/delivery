@@ -9,4 +9,7 @@ class VehicleData {
 }
 
 const vehicleData = new VehicleData();
-export { vehicleData };
+export { 
+  vehicleData,
+  Vehicle
+ };
