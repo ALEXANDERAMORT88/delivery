@@ -1,1 +1,44 @@
-<p>login works!</p>
+ <div class="login-container">
+    <div class="">
+      <div class="face face-top">
+      <div class="face face-front">
+        <div class="login-content" *ngIf="!forgotPassword">
+          <form class="form-container">
+            <div class="card" style="width: 35rem; height: 25rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Iniciar Sesión</h5>
+                  <div class="login-inputs">
+                    <input class="form-control" type="text" name="email" placeholder="email">
+
+                  </div>
+                  <div class="login-inputs">
+                    <input class="form-control" type="contraseña" name="contraseña" placeholder="password" autocomplete="new-password">
+                  </div>
+                  <div >
+                    <input class="btn btn-success" type="submit">
+                  </div>
+                  <span class="forgot-password" (click)="btnForgotPassword()" >Olvidaste tu contraseña?   </span>
+                  <span class="signup"> No tienes un usuario? Registrate aquí</span>
+                </div>
+              </div>
+          </form>
+        </div>
+      </div>
+      <div class="recover-view" style="width: 35rem; height: 25rem;" *ngIf="forgotPassword">
+       
+            <h2>Recuperar contraseña</h2>
+            <small>Por favor, ingresa tu correo electronico para enviarte un link de recuperación</small>
+            <form>
+              <div class="enter-email">
+                <div>
+                  <input class="form-control" type="text" name="email" placeholder="email">
+                </div>
+                <div >
+                  <input class="btn btn-success" type="submit">
+                </div>
+              </div>
+            
+            </form>
+          </div>
+        </div>
+          </div>
