@@ -12,3 +12,21 @@ const vehicleSchema = new mongoose.Schema<Vehicle>({
 const VehicleSchema = mongoose.model<Vehicle>('Vehicle', vehicleSchema);
 
 export { VehicleSchema };
+
+// // src/schema/vehicle.schema.ts
+
+// import mongoose from 'mongoose';
+
+// const vehicleSchema = new mongoose.Schema({
+//   id: String,
+//   name: String,
+//   type: String,
+//   year: Number,
+//   color: String,
+//   licensePlate: String
+// });
+
+// const VehicleModel = mongoose.model('Vehicle', vehicleSchema);
+
+// export { VehicleModel };
+
