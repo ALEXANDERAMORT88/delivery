@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  isContentVisible: boolean = true;
+
+  hidenContent() {
+    this.isContentVisible = false;
+  }
 }

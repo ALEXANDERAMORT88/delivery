@@ -1,0 +1,43 @@
+.section-Registro {
+    height: 5rem;
+    background-color: rgb(99, 99, 242);
+    display: flex;
+    justify-content: center;
+}
+
+.container-section {
+    display: flex;
+    align-items: center;
+}
+
+.img-repartidor{
+    height: 45px;
+    margin-right: 8px;
+}
+
+.publicidad {
+    display: flex;
+    align-items: center;
+}
+
+.btn-registrarme {
+    height: 3rem;
+    font-size: 20px !important;
+    margin-left: 12px;
+}
+
+.close-btn {
+    height: 25px;
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s;
+    background-color: antiquewhite;
+    border-radius: 100px;
+}
+
+.close-btn:hover{
+    color: rgb(85, 86, 86);
+}

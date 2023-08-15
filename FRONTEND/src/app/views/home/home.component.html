@@ -1,1 +1,15 @@
-<p>home works!</p>
+<section class="section-Registro" *ngIf="isContentVisible">
+
+    <div class="container-section">
+
+            <img class="img-repartidor" src="../../../assets/imgHome/repartidor.png" alt="">
+            <div class="publicidad">
+                <p>¿Nuevo en DeliveryApp? Disfruta de...</p>
+                <p class="disfruta-gratis">¡Hasta 15 días de entregas gratis!</p>
+            </div>
+
+            <button type="button" class="btn btn-success btn-registrarme">Registrarme</button>
+            <a href="">Términos y condiciones</a>
+    </div>
+    <span class="close-btn" (click)="hidenContent()">X</span>
+</section>
