@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-forgotPassword = false 
+forgotPassword:boolean = false 
 
 
  btnForgotPassword () {
