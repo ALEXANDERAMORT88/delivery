@@ -1,43 +1,47 @@
  <div class="login-container">
-    <div class="">
-      <div class="face face-top">
-      <div class="face face-front">
-        <div class="login-content" *ngIf="!forgotPassword">
+    <div>
+      <div>
+      <div>
+        <div *ngIf="!forgotPassword">
           <form class="form-container">
-            <div class="card" style="width: 35rem; height: 25rem;">
+            <div class="card" style="width: 35rem; height: 25rem; border: hidden;">
                 <div class="card-body">
-                  <h5 class="card-title">Iniciar Sesión</h5>
-                  <div class="login-inputs">
+                  <h5>Iniciar Sesión</h5>
+                  <div >
                     <input class="form-control" type="text" name="email" placeholder="email">
-
                   </div>
-                  <div class="login-inputs">
+                  <div >
                     <input class="form-control" type="contraseña" name="contraseña" placeholder="password" autocomplete="new-password">
                   </div>
                   <div >
                     <input class="btn btn-success" type="submit">
                   </div>
                   <span class="forgot-password" (click)="btnForgotPassword()" >Olvidaste tu contraseña?   </span>
-                  <span class="signup"> No tienes un usuario? Registrate aquí</span>
+                  <span class="forgot-password"> No tienes un usuario? Registrate aquí</span>
                 </div>
               </div>
           </form>
         </div>
       </div>
-      <div class="recover-view" style="width: 35rem; height: 25rem;" *ngIf="forgotPassword">
-       
-            <h2>Recuperar contraseña</h2>
-            <small>Por favor, ingresa tu correo electronico para enviarte un link de recuperación</small>
-            <form>
-              <div class="enter-email">
-                <div>
-                  <input class="form-control" type="text" name="email" placeholder="email">
-                </div>
-                <div >
-                  <input class="btn btn-success" type="submit">
+      <div >
+            <form class="form-container" *ngIf="forgotPassword">
+              <div class="recover-card" style="width: 35rem; height: 25rem; border: hidden;" >
+                <div class="card-body">
+                  <div>
+                    <h2>Recuperar contraseña</h2>
+                  </div>
+                    <div>
+                      <small>Por favor, ingresa tu correo electronico para enviarte un link de recuperación
+                      </small>
+                    </div>
+                    <div>
+                      <input class="form-control" type="text" name="email" placeholder="email">
+                    </div>
+                    <div>
+                      <input class="btn btn-success" type="submit">
+                    </div>
                 </div>
               </div>
-            
             </form>
           </div>
         </div>
