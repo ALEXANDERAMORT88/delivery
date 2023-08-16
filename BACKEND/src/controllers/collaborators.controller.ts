@@ -3,6 +3,7 @@ import { authenticateToken } from "../middlewares/jwt-validation";
 
 import {
     deleteCollaborator,
+    getCollaboratorById,
     getCollaborators, getCollaboratorsByName, postCollaborator, putCollaborator
 } from '../services/collaborators.service'
 
@@ -31,6 +32,19 @@ router.get('/name/:name', authenticateToken, async (req, res)=> {try {
     console.log(customError.errorMessage);
     res.status(customError.code).json(customError.message);
 }
+});
+
+router.get('/id/:id', authenticateToken, async (req, res)=> {
+    try {
+        const businessId = req.params.businessId;
+        const ServiceLayerResponse = await getCollaboratorById(businessId);
+        res.status(ServiceLayerResponse.code).json(ServiceLayerResponse.result);
+    } catch (error) {
+        const customError 
+        = error as CustomErrorFormat;
+        console.log(customError.errorMessage);
+        res.status(customError.code).json(customError.message);
+    }
 });
 
 router.post('', async(req,res)=> {
