@@ -27,6 +27,21 @@ return new Promise(async(res, rej) => { try {  const mongoResult = await Collabo
 });
 };
 
+const readCollaboratorsById = (businessId: string) =>{
+    return new Promise(async(res,rej)=>{
+        try {
+            const mongoResponse = await CollaboratorSchema.findById(businessId);
+            if (mongoResponse === null) {
+                rej(404);
+            } else {
+                res(mongoResponse);
+            }
+        } catch (error) {
+            rej(error)
+        }
+    });
+};
+
 const addCollaborator = (body: Collaborator) =>{
     // eslint-disable-next-line no-async-promise-executor
     return new Promise(async(res, rej) => {
@@ -76,5 +91,5 @@ const removeCollaborator = (employeeId: string) => {
 };
 
 export {
-    readCollaborators, readCollaboratorsByName, addCollaborator, removeCollaborator, editCollaborator
+    readCollaborators, readCollaboratorsByName, addCollaborator, removeCollaborator, editCollaborator, readCollaboratorsById
 };
