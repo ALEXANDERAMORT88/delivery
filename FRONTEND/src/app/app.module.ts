@@ -8,7 +8,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { ConcatenateUsComponent } from './components/concatenate-us/concatenate-us.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,7 @@ import { ConcatenateUsComponent } from './components/concatenate-us/concatenate-
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent,
-    ConcatenateUsComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
