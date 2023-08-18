@@ -10,6 +10,7 @@ import { LoginComponent } from './views/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ConcatenateUsComponent } from './components/concatenate-us/concatenate-us.component';
 import { CreateCustomerComponent } from './views/create-customer/create-customer.component';
+import { SlideShowComponent } from './views/home/slide-show/slide-show/slide-show.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CreateCustomerComponent } from './views/create-customer/create-customer
     HomeComponent,
     LoginComponent,
     ConcatenateUsComponent,
-    CreateCustomerComponent
+    CreateCustomerComponent,
+    SlideShowComponent
   ],
   imports: [
     BrowserModule,

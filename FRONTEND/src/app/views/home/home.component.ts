@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {SlideShowComponent } from './slide-show/slide-show/slide-show.component';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent {
 
   hidenContent() {
     this.isContentVisible = false;
-  }
-
-
+  };
+  slideshowComponent = new SlideShowComponent();
 }
+
