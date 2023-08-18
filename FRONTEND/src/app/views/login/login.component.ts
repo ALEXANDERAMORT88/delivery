@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
 
-forgotPassword:boolean = false 
+forgotPassword:boolean = false
 
 
  btnForgotPassword () {
@@ -20,5 +20,13 @@ forgotPassword:boolean = false
  }
 
 
-}
+};
+
+// export class loginProcess {
+// email: string = '';
+// password: string = '';
+
+// constructor(private authService: AuthService, private router: Router) {}
+
+// }
 
