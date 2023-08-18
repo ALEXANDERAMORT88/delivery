@@ -1,1 +1,35 @@
-<p>home works!</p>
+<section class="section-Registro" *ngIf="isContentVisible">
+
+    <div class="container-section">
+            <img class="img-repartidor" src="../../../assets/imgHome/repartidor.png" alt="">
+            <div class="publicidad">
+                <p>¿Nuevo en DeliveryApp? Disfruta de...</p>
+                <p class="disfruta-gratis">¡Hasta 15 días de entregas gratis!</p>
+            </div>
+
+            <button type="button" class="btn btn-success btn-registrarme" (click)="navigateToCreateCustomer()">Registrarme</button>
+            <a href="">Términos y condiciones</a>
+    </div>
+    <span class="close-btn" (click)="hidenContent()">X</span>
+</section>
+
+<section>
+<!-- 
+    <div class="">
+        <div class=""> -->
+            <div class="container-fluid img-container-home">
+                <div class="col img-fondo-baner">
+                    <img class="img-fondo" src="../../../assets/imgHome/sectionHomeImg.jpg" alt="">
+                </div>
+                <div class="slides-show">
+                    <app-slide-show></app-slide-show>
+                </div>
+                <div class="col container-baner">
+                    <span>¡Hasta 15 días de</span>
+                    <br>
+                    <span>entregas gratis!</span>
+                </div>
+            </div>
+    <!-- </div>
+    </div> -->
+</section>

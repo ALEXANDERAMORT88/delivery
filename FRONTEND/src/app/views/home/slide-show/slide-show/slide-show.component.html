@@ -1,0 +1,6 @@
+<div class="slides-show">
+    <div class="col img-rotar">
+        <img *ngFor="let imagen of imagenes; let i = index" [src]="imagen.src" [alt]="imagen.alt"  [class.visible]="imagen.visible"
+        [class.oculto]="!imagen.visible">
+    </div>
+</div>
