@@ -8,7 +8,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { ConcatenateUsComponent } from './components/concatenate-us/concatenate-us.component';
+// import { ConcatenateUsComponent } from './components/concatenate-us/concatenate-us.component';
+import { CreateCustomerComponent } from './views/create-customer/create-customer.component';
+import { SlideShowComponent } from './views/home/slide-show/slide-show/slide-show.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ConcatenateUsComponent } from './components/concatenate-us/concatenate-
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    ConcatenateUsComponent
+    // ConcatenateUsComponent,
+    CreateCustomerComponent,
+    SlideShowComponent
   ],
   imports: [
     BrowserModule,

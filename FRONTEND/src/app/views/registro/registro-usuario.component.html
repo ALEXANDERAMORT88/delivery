@@ -1,0 +1,6 @@
+<form [formGroup]="registroForm" (ngSubmit)="enviarRegistro()">
+    <!-- ... Campos del formulario aquí ... -->
+  
+    <button type="submit" [disabled]="registroForm.invalid">Enviar</button>
+  </form>
+  

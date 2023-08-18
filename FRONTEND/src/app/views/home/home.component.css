@@ -41,3 +41,44 @@
 .close-btn:hover{
     color: rgb(85, 86, 86);
 }
+
+
+.img-fondo-baner {
+    position: relative;
+    height: 500px;
+}
+
+.img-fondo {
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    height: 500px;
+    width: 900px;
+}
+
+.img-rotar {
+    position: absolute;
+    overflow: hidden;
+    left: 100px;
+    top: 250px;
+}
+
+
+.container-baner {
+    position: relative;
+    left: 400px;
+    top: -280px;
+}
+
+.container-baner span {
+    color: black;
+    font-size: 5rem;
+    font-family: fantasy;
+}
+
+.img1, .img2, .img3 {
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+}
+

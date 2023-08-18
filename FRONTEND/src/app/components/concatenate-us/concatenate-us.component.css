@@ -1,12 +1,13 @@
 .floating-image {
     height: 70px;
     position: fixed;
-    right:10%;
+    right:1%;
     top: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid transparent;
     border-radius: 50%;
     transition: border-color 0.4s;
+    z-index: 15;
 }
 
 .floating-image:hover {

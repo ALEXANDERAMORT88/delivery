@@ -10,12 +10,12 @@
         "listitem": "off"
       }
     ],
-    "axe/name-role-value": [
+    "axe/forms": [
       "default",
       {
-        "button-name": "off"
+        "select-name": "off",
+        "label": "off"
       }
-    ],
-    "button-type": "off"
+    ]
   }
 }

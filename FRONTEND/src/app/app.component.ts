@@ -8,3 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'delivery';
 }
+
+const imgenes = document.querySelectorAll("img-rotar");
+
