@@ -2,6 +2,7 @@
 
 import { Request, Response } from 'express';
 import { VehicleModel } from '../models/vehicle.models';
+import router from './customers.controller';
 
 async function getVehicles(req: Request, res: Response) {
   try {
@@ -85,4 +86,4 @@ async function deleteVehicle(req: Request, res: Response) {
   }
 }
 
-export { getVehicles, getVehicleById, createVehicle, updateVehicle, deleteVehicle };
+export default router;

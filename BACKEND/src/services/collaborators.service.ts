@@ -32,9 +32,9 @@ return new Promise((res, rej)=> { readCollaboratorsByName(collaboratorName).then
    });
 };
 
-const getCollaboratorById = (businessId: string): Promise<ServiceLayerResponse<Collaborator>> => {
+const getCollaboratorById = (employeeId: string): Promise<ServiceLayerResponse<Collaborator>> => {
 return new Promise((res, rej)=>{
-    readCollaboratorsById(businessId).then((dataLayerResponse) => {
+    readCollaboratorsById(employeeId).then((dataLayerResponse) => {
         if ((dataLayerResponse as Collaborator[]).length === 0) {
             res({code: 404, message: 'Collaborator not found'});
         } else {
@@ -56,9 +56,9 @@ const postCollaborator = (body: Collaborator): Promise<ServiceLayerResponse<Coll
 });
 };
 
-const putCollaborator = (employeeId: string, body: Collaborator): Promise<ServiceLayerResponse<Collaborator>> => {
+const putCollaborator = (id: string, body: Collaborator): Promise<ServiceLayerResponse<Collaborator>> => {
     return new Promise((res,  rej)=> {
-    editCollaborator(employeeId, body).then((dataLayerResponse) => {
+    editCollaborator(id, body).then((dataLayerResponse) => {
         if (dataLayerResponse === 200) {
             res({code: 200, message: 'Collaborator updated successfully' as string})
         };
@@ -72,9 +72,9 @@ const putCollaborator = (employeeId: string, body: Collaborator): Promise<Servic
 });
 };
 
-const deleteCollaborator = (employeeId: string): Promise<ServiceLayerResponse<Collaborator>> => { return new Promise((res, rej) => {
-    removeCollaborator(employeeId).then((dataLayerResponse)=> {
-        if (dataLayerResponse=== 200) {
+const deleteCollaborator = (id: string): Promise<ServiceLayerResponse<Collaborator>> => { return new Promise((res, rej) => {
+    removeCollaborator(id).then((dataLayerResponse)=> {
+        if (dataLayerResponse === 200) {
             res({code: 200, message: 'Collaborator removed successfully'})
         }
     }).catch((error)=> {

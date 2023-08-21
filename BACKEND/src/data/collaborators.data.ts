@@ -77,7 +77,7 @@ const removeCollaborator = (employeeId: string) => {
     return new Promise( async(res, rej)=> {
         try {
             const removePartner = await
-            CollaboratorSchema.findByIdAndRemove(employeeId);
+            CollaboratorSchema.findById(employeeId);
             if (removePartner === null) {
                 rej(404);
             } else {

@@ -23,6 +23,19 @@ try {
 }
 });
 
+// router.get('', async(req, res) => {
+//     try {
+//         const limit = req.query.limit;
+//         const response = await
+//         getCollaborators(limit as string);
+//         res.status(response.code).json({result: response.result});
+//     } catch (error) {
+//         const customError = error as CustomErrorFormat;
+//         console.error(customError.errorMessage)
+//         res.status(customError.code).json(customError.message);
+//     }
+// });
+
 router.get('/name/:name', authenticateToken, async (req, res)=> {try {
     const collaboratorName = req.params.collaboratorName;
     const serviceLayerResponse = await getCollaboratorsByName(collaboratorName);
@@ -59,7 +72,7 @@ router.post('', async(req,res)=> {
     }
 });
 
-router.put('/:id', async function (req, res){
+router.put('/id/:id', async function (req, res){
     try {
         const  id = req.params.id;
         const body = req.body;
@@ -73,7 +86,7 @@ router.put('/:id', async function (req, res){
     }
 });
 
-router.delete('/:id', async function (req, res) {
+router.delete('/id/:id', async function (req, res) {
     try {
         const employeeId = req.params.id;
         const serviceLayerResponse = await
